@@ -1,10 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class PhoneInteractable : UIInteractable
 {
     public string correctSequence;
     public AudioClip[] buttonSounds;
+    public TextMeshProUGUI firstPart;
+    public TextMeshProUGUI secondPart;
+    public TextMeshProUGUI thirdPart;
+
     private string currentSequence = "";
     private bool isLockedIn = false;
     private readonly Dictionary<string, int> buttonValueToSoundIndex = new()
@@ -25,7 +30,7 @@ public class PhoneInteractable : UIInteractable
     public void PhoneButtonPressed(string value)
     {
         if (isLockedIn) {
-            StartCoroutine(controller.displayCaption("Can't change the number anymore.", 5f));
+            StartCoroutine(controller.displayCaption("Can't call. The number is stuck on screen.", 5f));
             return;
         }
 
@@ -35,8 +40,26 @@ public class PhoneInteractable : UIInteractable
         }
         else
         {
-            if (currentSequence.Length == 6) {
+            int sequenceLen = currentSequence.Length;
+            if (sequenceLen == 6) {
                 currentSequence = "";
+                firstPart.text = "";
+                secondPart.text = "";
+                thirdPart.text = "";
+                sequenceLen = 0;
+            }
+
+            if(sequenceLen < 2)
+            {
+                firstPart.text += value;
+            }
+            else if(sequenceLen < 4)
+            {
+                secondPart.text += value;
+            }
+            else
+            {
+                thirdPart.text += value;
             }
 
             int buttonIndex = buttonValueToSoundIndex[value];
