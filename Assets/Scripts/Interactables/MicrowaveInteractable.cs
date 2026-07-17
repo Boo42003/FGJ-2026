@@ -22,6 +22,11 @@ public class MicrowaveInteractable : UIInteractable
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
+        if (controlAnimatedUI)
+        {
+            controlAnimatedUI.StopAnimation();
+        }
+
         MicrowaveButton[] buttonChildren = buttonsCanvas.GetComponentsInChildren<MicrowaveButton>();
 
         for (int i = 0; i < buttonChildren.Length; i++) {

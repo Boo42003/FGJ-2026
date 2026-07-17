@@ -7,12 +7,18 @@ public class UIInteractable : Interactable
     public Animator animator;
     public AudioSource audioSource;
     public AudioClip interactSound;
+    public ControlAnimatedUI controlAnimatedUI;
 
     private void Start()
     {
         controller = FindAnyObjectByType<FirstPersonController>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
+        if (controlAnimatedUI)
+        {
+            controlAnimatedUI.StopAnimation();
+        }
     }
 
     public override void Interact()
@@ -23,6 +29,11 @@ public class UIInteractable : Interactable
         {
             audioSource.PlayOneShot(interactSound);
         }
+
+        if(controlAnimatedUI)
+        {
+            controlAnimatedUI.StartAnimation();
+        }
     }
 
     private void Update()
@@ -31,6 +42,11 @@ public class UIInteractable : Interactable
         {
             UI.enabled = false;
             controller.ToggleInUI();
+
+            if (controlAnimatedUI)
+            {
+                controlAnimatedUI.StopAnimation();
+            }
         }
     }
 }

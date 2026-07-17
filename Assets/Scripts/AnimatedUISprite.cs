@@ -22,8 +22,16 @@ public class UISpriteAnimation : MonoBehaviour
     public void Func_PlayUIAnim()
     {
         IsDone = false;
-        StartCoroutine(Func_PlayAnimUI());
+        m_CorotineAnim = StartCoroutine(Func_PlayAnimUI());
     }
+
+    public void Stop()
+    {
+        IsDone = true;
+        StopAllCoroutines();
+        m_CorotineAnim = null;
+    }
+
     IEnumerator Func_PlayAnimUI()
     {
         yield return new WaitForSeconds(m_Speed);

@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 153402191}
   - component: {fileID: 153402193}
   - component: {fileID: 153402192}
+  - component: {fileID: 153402195}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -510,6 +511,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &153402195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153402190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01bae05f4541da4f8d9b50be82711d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlAnimatedUI
+  animatedSprites: []
 --- !u!1 &200048705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1613,7 @@ GameObject:
   - component: {fileID: 329045251}
   - component: {fileID: 329045253}
   - component: {fileID: 329045252}
+  - component: {fileID: 329045254}
   m_Layer: 0
   m_Name: ThirdPart
   m_TagString: Untagged
@@ -1725,6 +1740,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329045250}
   m_CullTransparentMesh: 1
+--- !u!114 &329045254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329045250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f46a147f7150ce4cb2d9315127663a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FontAnimator
+  textObject: {fileID: 329045252}
+  fonts:
+  - {fileID: 11400000, guid: 11891a0efaace9845848b296e5fa666b, type: 2}
+  - {fileID: 11400000, guid: c3fedd540344eb84aae9055a8a26bbc6, type: 2}
+  - {fileID: 11400000, guid: 622f73f9fb518e3448f97e74290e4c39, type: 2}
+  speed: 0.2
 --- !u!1001 &356550796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6281,6 +6314,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   audioSource: {fileID: 0}
   interactSound: {fileID: 0}
+  controlAnimatedUI: {fileID: 1180217838}
   buttonsCanvas: {fileID: 1663365470}
   wrongSound: {fileID: 8300000, guid: b14bb9b6e36e5844d8a7db34c4bc2b86, type: 3}
   microwaveSound: {fileID: 8300000, guid: 55ade0cbb66962943914993874181d4e, type: 3}
@@ -8065,6 +8099,7 @@ GameObject:
   - component: {fileID: 907889618}
   - component: {fileID: 907889620}
   - component: {fileID: 907889619}
+  - component: {fileID: 907889621}
   m_Layer: 0
   m_Name: SecondPart
   m_TagString: Untagged
@@ -8191,6 +8226,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907889617}
   m_CullTransparentMesh: 1
+--- !u!114 &907889621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907889617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f46a147f7150ce4cb2d9315127663a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FontAnimator
+  textObject: {fileID: 907889619}
+  fonts:
+  - {fileID: 11400000, guid: 11891a0efaace9845848b296e5fa666b, type: 2}
+  - {fileID: 11400000, guid: c3fedd540344eb84aae9055a8a26bbc6, type: 2}
+  - {fileID: 11400000, guid: 622f73f9fb518e3448f97e74290e4c39, type: 2}
+  speed: 0.2
 --- !u!1001 &910060345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8266,6 +8319,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   audioSource: {fileID: 0}
   interactSound: {fileID: 0}
+  controlAnimatedUI: {fileID: 6801971726783075293}
   correctSequence: 123456
   buttonSounds:
   - {fileID: 8300000, guid: 781d92b2a2606f848b8ed898bf852581, type: 3}
@@ -9519,6 +9573,7 @@ GameObject:
   - component: {fileID: 1180217837}
   - component: {fileID: 1180217836}
   - component: {fileID: 1180217835}
+  - component: {fileID: 1180217838}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -9615,6 +9670,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1180217838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180217833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01bae05f4541da4f8d9b50be82711d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlAnimatedUI
+  animatedSprites: []
 --- !u!1 &1189070383
 GameObject:
   m_ObjectHideFlags: 0
@@ -9914,6 +9982,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   audioSource: {fileID: 0}
   interactSound: {fileID: 0}
+  controlAnimatedUI: {fileID: 153402195}
   dials:
   - {fileID: 5099823939050375413}
   - {fileID: 2092229614}
@@ -10981,6 +11050,7 @@ GameObject:
   - component: {fileID: 1386379163}
   - component: {fileID: 1386379165}
   - component: {fileID: 1386379164}
+  - component: {fileID: 1386379166}
   m_Layer: 0
   m_Name: FirstPart
   m_TagString: Untagged
@@ -11107,6 +11177,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386379162}
   m_CullTransparentMesh: 1
+--- !u!114 &1386379166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386379162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f46a147f7150ce4cb2d9315127663a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FontAnimator
+  textObject: {fileID: 1386379164}
+  fonts:
+  - {fileID: 11400000, guid: 11891a0efaace9845848b296e5fa666b, type: 2}
+  - {fileID: 11400000, guid: c3fedd540344eb84aae9055a8a26bbc6, type: 2}
+  - {fileID: 11400000, guid: 622f73f9fb518e3448f97e74290e4c39, type: 2}
+  speed: 0.2
 --- !u!1 &1401576444
 GameObject:
   m_ObjectHideFlags: 0
@@ -18208,6 +18296,7 @@ GameObject:
   - component: {fileID: 3872434323661301673}
   - component: {fileID: 339853694044920864}
   - component: {fileID: 4322407438701089506}
+  - component: {fileID: 6801971726783075293}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -18215,6 +18304,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6801971726783075293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801971726783075292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01bae05f4541da4f8d9b50be82711d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlAnimatedUI
+  animatedSprites: []
 --- !u!212 &7729105064050395970
 SpriteRenderer:
   serializedVersion: 3

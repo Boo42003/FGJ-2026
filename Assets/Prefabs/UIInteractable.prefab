@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 5557145461742302720}
   - component: {fileID: 5548538148244674525}
   - component: {fileID: 5087766465727436304}
+  - component: {fileID: 4804675794687188874}
   m_Layer: 0
   m_Name: UIInteractable
   m_TagString: Untagged
@@ -246,6 +247,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   audioSource: {fileID: 0}
   interactSound: {fileID: 0}
+  controlAnimatedUI: {fileID: 4804675794687188874}
 --- !u!82 &5087766465727436304
 AudioSource:
   m_ObjectHideFlags: 0
@@ -343,6 +345,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4804675794687188874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853207870405469634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01bae05f4541da4f8d9b50be82711d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlAnimatedUI
+  animatedSprites: []
 --- !u!1 &6801971727630625285
 GameObject:
   m_ObjectHideFlags: 0
