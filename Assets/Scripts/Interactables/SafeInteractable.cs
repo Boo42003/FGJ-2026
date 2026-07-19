@@ -133,7 +133,7 @@ public class SafeInteractable : UIInteractable
         unlocked = true;
         safeDoorClosedUI.raycastTarget = true;
         audioSource.PlayOneShot(unlockSound);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
 
         OpenSafe();
     }
@@ -176,6 +176,8 @@ public class SafeInteractable : UIInteractable
         metronomeUpgradeUI.enabled = false;
 
         UI.enabled = false;
+
+        controller.ToggleInUI();
 
         if (controlAnimatedUI)
         {

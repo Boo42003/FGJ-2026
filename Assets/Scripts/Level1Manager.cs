@@ -1,7 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Level1Manager : MonoBehaviour
 {
@@ -13,6 +10,7 @@ public class Level1Manager : MonoBehaviour
     public bool soundboardGot = false;
     public bool pianoGot = false;
     public AudioSource levelAudio;
+    public AudioSource sfxAudio;
     public AudioClip itemGetSound;
 
     public GameObject lightsObject;
@@ -99,7 +97,7 @@ public class Level1Manager : MonoBehaviour
         controller.ToggleInUI();
         upgradeGetUI.SetActive(true);
 
-        levelAudio.PlayOneShot(itemGetSound);
+        sfxAudio.PlayOneShot(itemGetSound);
     }
 
     void EnableRadio()

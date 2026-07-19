@@ -23,7 +23,7 @@ public class SoundManipulationController : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI PlaybackRateTextbox;
 
-    float playbackSpeed = 1f;
+    float playbackSpeed = 1f; public float PlaybackSpeed { get { return playbackSpeed; } }
     float volume = .5f;
     bool tuning = false;
     public bool powered = false;

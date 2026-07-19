@@ -23,7 +23,7 @@ public class UpgradeGetUI : MonoBehaviour
         {
             controller.ToggleInUI();
 
-            Level1Manager.Instance.levelAudio.PlayOneShot(connectSound);
+            Level1Manager.Instance.sfxAudio.PlayOneShot(connectSound);
 
             if(onCloseCaption != null)
             {
