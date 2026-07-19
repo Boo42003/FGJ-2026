@@ -21,7 +21,10 @@ public class ControlAnimatedUI : MonoBehaviour
     {
         foreach (var anim in animatedSprites)
         {
-            anim.Func_PlayUIAnim();
+            if (anim.isActiveAndEnabled)
+            {
+                anim.Func_PlayUIAnim();
+            }
         }
     }
 }

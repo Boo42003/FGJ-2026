@@ -1,10 +1,12 @@
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class SafeInteractable : UIInteractable
 {
     public string[] validFrequencies;
+    public RadioFrequencyController frequencyController;
     private bool firstHit = false;
     private bool secondHit = false;
     private bool thirdHit = false;
@@ -30,6 +32,7 @@ public class SafeInteractable : UIInteractable
     public UISpriteAnimation light1UI;
     public UISpriteAnimation light2UI;
     public UISpriteAnimation light3UI;
+    public GameObject safeLightsUI;
 
     [Header("Sprites")]
     public Sprite[] lightOffSprites;
@@ -38,10 +41,11 @@ public class SafeInteractable : UIInteractable
     [Header("Sounds")]
     public AudioClip hitSound;
     public AudioClip unlockSound;
-    public AudioClip openSound;
+    public AudioClip missSound;
 
-    public void CheckFrequencyHit(string frequency)
+    public void CheckFrequencyHit()
     {
+        string frequency = frequencyController.Frequency.ToString("F1");
         if(unlocked)
         {
             return;
@@ -77,12 +81,16 @@ public class SafeInteractable : UIInteractable
 
         if(firstHit && secondHit && thirdHit)
         {
-            UnlockSafe();
+            StartCoroutine(UnlockSafe());
         }
     }
 
     public void ResetLights()
     {
+        firstHit = false;
+        secondHit = false;
+        thirdHit = false;
+        audioSource.PlayOneShot(missSound);
         lightOff1.SetActive(true);
         lightOff2.SetActive(true);
         lightOff3.SetActive(true);
@@ -120,11 +128,14 @@ public class SafeInteractable : UIInteractable
         }
     }
 
-    public void UnlockSafe()
+    IEnumerator UnlockSafe()
     {
         unlocked = true;
         safeDoorClosedUI.raycastTarget = true;
         audioSource.PlayOneShot(unlockSound);
+        yield return new WaitForSeconds(2.0f);
+
+        OpenSafe();
     }
 
     public void OpenSafe()
@@ -135,7 +146,6 @@ public class SafeInteractable : UIInteractable
         }
 
         open = true;
-        audioSource.PlayOneShot(openSound);
 
         safeDoorClosedSprite.enabled = false;
         safeDoorOpenSprite.enabled = true;
@@ -145,6 +155,12 @@ public class SafeInteractable : UIInteractable
 
         metronomeUpgradeSprite.enabled = true;
         metronomeUpgradeUI.enabled = true;
+
+        lightOn1.SetActive(false);
+        lightOn2.SetActive(false);
+        lightOn3.SetActive(false);
+
+        safeLightsUI.SetActive(false);
     }
 
     public void MetronomeUpgradeGet()
@@ -155,6 +171,9 @@ public class SafeInteractable : UIInteractable
         }
 
         metronomeGet = true;
+
+        metronomeUpgradeSprite.enabled = false;
+        metronomeUpgradeUI.enabled = false;
 
         UI.enabled = false;
 
